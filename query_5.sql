@@ -1,6 +1,6 @@
 -- Знайти які курси читає певний викладач.
-SELECT teachers.fullname, disciplines.name
+SELECT teachers.fullname, subjects.name
 FROM teachers
-         LEFT JOIN disciplines ON disciplines.teacher_id = teachers.id
+         LEFT JOIN subjects ON subjects.teacher_id = teachers.id
 -- WHERE teachers.id = 1;
 WHERE teachers.id = 2;

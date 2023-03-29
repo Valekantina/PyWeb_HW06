@@ -1,8 +1,8 @@
 -- Знайти студента із найвищим середнім балом з певного предмета.
-SELECT disciplines.name, students.fullname, round(avg(grades.grade), 2) AS avg_grade
+SELECT subjects.name, students.fullname, round(avg(grades.grade), 2) AS avg_grade
 FROM grades
          LEFT JOIN students ON students.id = grades.student_id
-         LEFT JOIN disciplines ON disciplines.id = grades.discipline_id
-WHERE disciplines.id = 1
-GROUP BY students.id, disciplines.id
+         LEFT JOIN subjects ON subjects.id = grades.subjects_id
+WHERE subjects.id = 1
+GROUP BY students.id, subjects.id
 ORDER BY avg_grade DESC LIMIT 1;
